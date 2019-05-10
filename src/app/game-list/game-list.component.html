@@ -1,0 +1,61 @@
+<!-- Developer: praveen reddy
+    Created Date:06/5/2019
+    Project Name:GameCity
+    Purpose:Gaming
+    -->
+
+<br/>
+<br/>
+
+<div class="col-lg-6">
+
+  <h2> Welcome to Game City Your Card balance is {{ amount}}</h2>
+
+  <br/>
+
+  <br/>
+  <br/>
+
+  <table class="table table-striped table-responsive table-hover">
+
+    <thead>
+
+      <tr>
+
+        <th>Id</th>
+
+        <th>Game Name</th>
+
+        <th>Price</th>
+
+        <th>click</th>
+
+      </tr>
+
+    </thead>
+
+
+
+    <tbody>
+
+      <tr *ngFor="let game of games ">
+
+        <td>{{game.id}}</td>
+
+        <td>{{game.game_Name}}</td>
+
+        <td>{{game.price}}</td>
+
+        <td>
+          <button class="btn btn-success"  (click)="onSubmit()">PlayNoww </button>
+        </td>
+
+      </tr>
+
+
+
+    </tbody>
+
+  </table>
+
+</div>

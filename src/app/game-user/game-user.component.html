@@ -1,0 +1,47 @@
+<h1>Welcome To Capgemini:
+  <<178226>></h1>
+<hr />
+<hr />
+<h1>Welcome To GameCity: Experience the Online Gaming Experience</h1>
+<div class="form-group">
+  <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input type="text" class="form-control" formControlName="name" pattern="[a-zA-Z]*" placeholder="Enter Name">
+
+          <div *ngIf="submitted &&gameForm.controls.name.errors" class="error">
+
+            <div class="text-danger" *ngIf="gameForm.controls.name.errors.required">name is required</div>
+
+            <div class="text-info" *ngIf="gameForm.controls.name.errors.pattern">name should start with alphabets </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <input type="text" class="form-control" formControlName="address" placeholder="Enter Address">
+
+          <div *ngIf="submitted &&gameForm.controls.address.errors" class="error">
+            <div class="text-danger" *ngIf="gameForm.controls.address.errors.required">address is required</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Amount:</td>
+        <td>
+          <input type="number" class="form-control" [formControl]="amount" placeholder="Enter Amount to add">
+          <div *ngIf="submitted &&gameForm.controls.amount.errors" class="error">
+            <div class="text-danger" *ngIf="gameForm.controls.amount.errors.minLength()">minimum amount should be 100</div>
+          </div>
+        </td>
+        <tr>
+          <button class="btn btn-success" (click)="getAmount()">Buy Card</button>
+        </tr>
+    </table>
+
+    <h3>Note:100 Rs will be deducted for service charge</h3>
+  </form>
+</div>
